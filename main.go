@@ -39,7 +39,8 @@ func main() {
 	}
 	runLog.Println("签到成功,正在发送邮件")
 
-	b := strings.Join(node, "<p>")
+	//b := strings.Join(node, "<p>")
+	b := strings.Join(node, ",<br>")
 
 	if err := sendmail.Send(cfg.SendMail, cfg.SendPws, cfg.Mail, b); err != nil {
 		runLog.Println("邮件发送失败,原因是: ", err)
